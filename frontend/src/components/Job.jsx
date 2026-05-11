@@ -17,7 +17,7 @@ const Job = ({job}) => {
     }
     
     return (
-        <div className='p-5 rounded-md shadow-xl bg-white border border-gray-100'>
+        <div className='p-5 rounded-xl shadow-md bg-white border border-[#EDE9FE] hover:shadow-lg hover:border-[#C4B5FD] transition-all duration-200'>
             <div className='flex items-center justify-between'>
                 <p className='text-sm text-gray-500'>{daysAgoFunction(job?.createdAt) === 0 ? "Today" : `${daysAgoFunction(job?.createdAt)} days ago`}</p>
                 <Button variant="outline" className="rounded-full" size="icon"><Bookmark /></Button>
@@ -40,13 +40,13 @@ const Job = ({job}) => {
                 <p className='text-sm text-gray-600'>{job?.description}</p>
             </div>
             <div className='flex items-center gap-2 mt-4'>
-                <Badge className={'text-blue-700 font-bold'} variant="ghost">{job?.position} Positions</Badge>
-                <Badge className={'text-[#F83002] font-bold'} variant="ghost">{job?.jobType}</Badge>
-                <Badge className={'text-[#7209b7] font-bold'} variant="ghost">{job?.salary}LPA</Badge>
+                <Badge className={'text-[#0891B2] bg-[#ECFEFF] font-semibold'} variant="ghost">{job?.position} Positions</Badge>
+                <Badge className={'text-[#D97706] bg-[#FFFBEB] font-semibold'} variant="ghost">{job?.jobType}</Badge>
+                <Badge className={'text-[#059669] bg-[#ECFDF5] font-semibold'} variant="ghost">{job?.salary}LPA</Badge>
             </div>
             <div className='flex items-center gap-4 mt-4'>
-                <Button onClick={()=> navigate(`/description/${job?._id}`)} variant="outline">Details</Button>
-                <Button className="bg-[#7209b7]">Save For Later</Button>
+                <Button onClick={()=> navigate(`/description/${job?._id}`)} variant="outline" className="border-[#7C3AED] text-[#7C3AED] hover:bg-[#EDE9FE]">Details</Button>
+                <Button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white">Save For Later</Button>
             </div>
         </div>
     )
